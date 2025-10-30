@@ -1,0 +1,9 @@
+{
+  "values": [
+    "sculk_blockset:sculk_stairs",
+    "sculk_blockset:sculk_fence",
+    "sculk_blockset:sculk_fence_gate",
+    "sculk_blockset:sculk_wall",
+    "sculk_blockset:sculk_slab"
+  ]
+}

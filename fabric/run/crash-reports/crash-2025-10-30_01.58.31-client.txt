@@ -1,0 +1,158 @@
+---- Minecraft Crash Report ----
+// My bad.
+
+Time: 2025-10-30 01:58:31
+Description: Initializing game
+
+java.lang.RuntimeException: Could not execute entrypoint stage 'main' due to errors, provided by 'sculk_blockset' at 'me.carlettos.sculk_blockset.fabric.SculkBlocksetFabric'!
+	at net.fabricmc.loader.impl.FabricLoaderImpl.lambda$invokeEntrypoints$0(FabricLoaderImpl.java:409)
+	at net.fabricmc.loader.impl.util.ExceptionUtil.gatherExceptions(ExceptionUtil.java:33)
+	at net.fabricmc.loader.impl.FabricLoaderImpl.invokeEntrypoints(FabricLoaderImpl.java:407)
+	at net.fabricmc.loader.impl.game.minecraft.Hooks.startClient(Hooks.java:52)
+	at knot//net.minecraft.client.Minecraft.<init>(Minecraft.java:458)
+	at knot//net.minecraft.client.main.Main.main(Main.java:211)
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:506)
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:72)
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86)
+	at dev.architectury.transformer.TransformerRuntime.main(TransformerRuntime.java:220)
+Caused by: java.lang.ExceptionInInitializerError
+	at knot//me.carlettos.sculk_blockset.fabric.SculkBlocksetFabric.onInitialize(SculkBlocksetFabric.java:14)
+	at net.fabricmc.loader.impl.FabricLoaderImpl.invokeEntrypoints(FabricLoaderImpl.java:405)
+	... 8 more
+Caused by: net.minecraft.ResourceLocationException: Non [a-z0-9/._-] character in path of location: sculk_blockset:SCULK_STAIRS
+	at knot//net.minecraft.resources.ResourceLocation.assertValidPath(ResourceLocation.java:252)
+	at knot//net.minecraft.resources.ResourceLocation.<init>(ResourceLocation.java:47)
+	at knot//dev.architectury.registry.registries.DeferredRegister.register(DeferredRegister.java:56)
+	at knot//me.carlettos.sculk_blockset.SculkBlockset.registerItem(SculkBlockset.java:32)
+	at knot//me.carlettos.sculk_blockset.SculkBlockset.<clinit>(SculkBlockset.java:41)
+	... 10 more
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at net.fabricmc.loader.impl.FabricLoaderImpl.lambda$invokeEntrypoints$0(FabricLoaderImpl.java:409)
+	at net.fabricmc.loader.impl.util.ExceptionUtil.gatherExceptions(ExceptionUtil.java:33)
+	at net.fabricmc.loader.impl.FabricLoaderImpl.invokeEntrypoints(FabricLoaderImpl.java:407)
+	at net.fabricmc.loader.impl.game.minecraft.Hooks.startClient(Hooks.java:52)
+	at knot//net.minecraft.client.Minecraft.<init>(Minecraft.java:458)
+
+-- Initialization --
+Details:
+	Modules: 
+Stacktrace:
+	at knot//net.minecraft.client.main.Main.main(Main.java:211)
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:506)
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:72)
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86)
+	at dev.architectury.transformer.TransformerRuntime.main(TransformerRuntime.java:220)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.1
+	Minecraft Version ID: 1.20.1
+	Operating System: Linux (amd64) version 6.17.5-arch1-1
+	Java Version: 17.0.17, Arch Linux
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Arch Linux
+	Memory: 1053201072 bytes (1004 MiB) / 1736441856 bytes (1656 MiB) up to 8380219392 bytes (7992 MiB)
+	CPUs: 8
+	Processor Vendor: GenuineIntel
+	Processor Name: Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz
+	Identifier: Intel64 Family 6 Model 165 Stepping 2
+	Microarchitecture: unknown
+	Frequency (GHz): 2.50
+	Number of physical packages: 1
+	Number of physical CPUs: 4
+	Number of logical CPUs: 8
+	Graphics card #0 name: CometLake-H GT2 [UHD Graphics]
+	Graphics card #0 vendor: Intel Corporation (0x8086)
+	Graphics card #0 VRAM (MB): 256.00
+	Graphics card #0 deviceId: 0x9bc4
+	Graphics card #0 versionInfo: unknown
+	Graphics card #1 name: TU117M [GeForce GTX 1650 Ti Mobile]
+	Graphics card #1 vendor: NVIDIA Corporation (0x10de)
+	Graphics card #1 VRAM (MB): 288.00
+	Graphics card #1 deviceId: 0x1f95
+	Graphics card #1 versionInfo: unknown
+	Virtual memory max (MB): 20074.53
+	Virtual memory used (MB): 15385.22
+	Swap memory total (MB): 4096.00
+	Swap memory used (MB): 0.00
+	JVM Flags: 0 total; 
+	Fabric Mods: 
+		architectury: Architectury 9.2.14
+		fabric-api: Fabric API 0.92.6+1.20.1
+		fabric-api-base: Fabric API Base 0.4.32+1802ada577
+		fabric-api-lookup-api-v1: Fabric API Lookup API (v1) 1.6.37+1802ada577
+		fabric-biome-api-v1: Fabric Biome API (v1) 13.0.14+1802ada577
+		fabric-block-api-v1: Fabric Block API (v1) 1.0.12+1802ada577
+		fabric-block-view-api-v2: Fabric BlockView API (v2) 1.0.3+924f046a77
+		fabric-blockrenderlayer-v1: Fabric BlockRenderLayer Registration (v1) 1.1.42+1802ada577
+		fabric-client-tags-api-v1: Fabric Client Tags 1.1.3+1802ada577
+		fabric-command-api-v1: Fabric Command API (v1) 1.2.35+f71b366f77
+		fabric-command-api-v2: Fabric Command API (v2) 2.2.14+1802ada577
+		fabric-commands-v0: Fabric Commands (v0) 0.2.52+df3654b377
+		fabric-containers-v0: Fabric Containers (v0) 0.1.67+df3654b377
+		fabric-content-registries-v0: Fabric Content Registries (v0) 4.0.13+1802ada577
+		fabric-convention-tags-v1: Fabric Convention Tags 1.5.6+1802ada577
+		fabric-crash-report-info-v1: Fabric Crash Report Info (v1) 0.2.20+1802ada577
+		fabric-data-attachment-api-v1: Fabric Data Attachment API (v1) 1.0.2+de0fd6d177
+		fabric-data-generation-api-v1: Fabric Data Generation API (v1) 12.3.7+1802ada577
+		fabric-dimensions-v1: Fabric Dimensions API (v1) 2.1.55+1802ada577
+		fabric-entity-events-v1: Fabric Entity Events (v1) 1.6.1+1c78457f77
+		fabric-events-interaction-v0: Fabric Events Interaction (v0) 0.6.5+13a40c6677
+		fabric-events-lifecycle-v0: Fabric Events Lifecycle (v0) 0.2.64+df3654b377
+		fabric-game-rule-api-v1: Fabric Game Rule API (v1) 1.0.41+1802ada577
+		fabric-gametest-api-v1: Fabric Game Test API (v1) 1.2.15+1802ada577
+		fabric-item-api-v1: Fabric Item API (v1) 2.1.29+1802ada577
+		fabric-item-group-api-v1: Fabric Item Group API (v1) 4.0.14+1802ada577
+		fabric-key-binding-api-v1: Fabric Key Binding API (v1) 1.0.38+1802ada577
+		fabric-keybindings-v0: Fabric Key Bindings (v0) 0.2.36+df3654b377
+		fabric-lifecycle-events-v1: Fabric Lifecycle Events (v1) 2.2.23+1802ada577
+		fabric-loot-api-v2: Fabric Loot API (v2) 1.2.3+1802ada577
+		fabric-loot-tables-v1: Fabric Loot Tables (v1) 1.1.47+9e7660c677
+		fabric-message-api-v1: Fabric Message API (v1) 5.1.10+1802ada577
+		fabric-mining-level-api-v1: Fabric Mining Level API (v1) 2.1.52+1802ada577
+		fabric-model-loading-api-v1: Fabric Model Loading API (v1) 1.0.4+1802ada577
+		fabric-models-v0: Fabric Models (v0) 0.4.3+9386d8a777
+		fabric-networking-api-v1: Fabric Networking API (v1) 1.3.14+a158aa0477
+		fabric-networking-v0: Fabric Networking (v0) 0.3.54+df3654b377
+		fabric-object-builder-api-v1: Fabric Object Builder API (v1) 11.1.5+e35120df77
+		fabric-particles-v1: Fabric Particles (v1) 1.1.3+1802ada577
+		fabric-recipe-api-v1: Fabric Recipe API (v1) 1.0.24+1802ada577
+		fabric-registry-sync-v0: Fabric Registry Sync (v0) 2.3.6+1802ada577
+		fabric-renderer-api-v1: Fabric Renderer API (v1) 3.2.2+1802ada577
+		fabric-renderer-indigo: Fabric Renderer - Indigo 1.5.3+85287f9f77
+		fabric-renderer-registries-v1: Fabric Renderer Registries (v1) 3.2.47+df3654b377
+		fabric-rendering-data-attachment-v1: Fabric Rendering Data Attachment (v1) 0.3.39+92a0d36777
+		fabric-rendering-fluids-v1: Fabric Rendering Fluids (v1) 3.0.29+1802ada577
+		fabric-rendering-v0: Fabric Rendering (v0) 1.1.50+df3654b377
+		fabric-rendering-v1: Fabric Rendering (v1) 3.0.9+1802ada577
+		fabric-resource-conditions-api-v1: Fabric Resource Conditions API (v1) 2.3.9+1802ada577
+		fabric-resource-loader-v0: Fabric Resource Loader (v0) 0.11.12+fb82e9d777
+		fabric-screen-api-v1: Fabric Screen API (v1) 2.0.9+1802ada577
+		fabric-screen-handler-api-v1: Fabric Screen Handler API (v1) 1.3.33+1802ada577
+		fabric-sound-api-v1: Fabric Sound API (v1) 1.0.14+1802ada577
+		fabric-transfer-api-v1: Fabric Transfer API (v1) 3.3.6+8dd72ea377
+		fabric-transitive-access-wideners-v1: Fabric Transitive Access Wideners (v1) 4.3.2+1802ada577
+		fabricloader: Fabric Loader 0.17.3
+		generated_0bc8997: Generated Mod (Please Ignore) 1.0.0
+		java: OpenJDK 64-Bit Server VM 17
+		minecraft: Minecraft 1.20.1
+		mixinextras: MixinExtras 0.5.0
+		sculk_blockset: Sculk Blockset 1.0
+	Launched Version: Fabric
+	Backend library: LWJGL version 3.3.2-snapshot
+	Backend API: Unknown
+	Window size: <not initialized>
+	GL Caps: Using framebuffer using OpenGL 3.2
+	GL debug messages: <disabled>
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'fabric'
+	Type: Client (map_client.txt)
+	CPU: <unknown>

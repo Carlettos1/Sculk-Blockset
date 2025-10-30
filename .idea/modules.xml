@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/sculk_blockset.common.iml" filepath="$PROJECT_DIR$/.idea/modules/common/sculk_blockset.common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/sculk_blockset.common.main.iml" filepath="$PROJECT_DIR$/.idea/modules/common/sculk_blockset.common.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/sculk_blockset.common.test.iml" filepath="$PROJECT_DIR$/.idea/modules/common/sculk_blockset.common.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fabric/sculk_blockset.fabric.main.iml" filepath="$PROJECT_DIR$/.idea/modules/fabric/sculk_blockset.fabric.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fabric/sculk_blockset.fabric.test.iml" filepath="$PROJECT_DIR$/.idea/modules/fabric/sculk_blockset.fabric.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/forge/sculk_blockset.forge.main.iml" filepath="$PROJECT_DIR$/.idea/modules/forge/sculk_blockset.forge.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/forge/sculk_blockset.forge.test.iml" filepath="$PROJECT_DIR$/.idea/modules/forge/sculk_blockset.forge.test.iml" />
+    </modules>
+  </component>
+</project>
